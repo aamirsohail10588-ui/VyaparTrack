@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Todo Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Daily Todo Tracker</h1>
+      <p class="subtitle">Har din ka kaam, date ke saath track karo.</p>
+
+      <section class="card">
+        <h2>Add Task</h2>
+        <form id="todo-form" class="form-grid">
+          <label>
+            Task Title
+            <input type="text" id="title" placeholder="Jaise: Client call" required />
+          </label>
+
+          <label>
+            Date
+            <input type="date" id="date" required />
+          </label>
+
+          <label class="full-width">
+            Details
+            <textarea id="details" rows="3" placeholder="Aaj ka data / notes"></textarea>
+          </label>
+
+          <button type="submit">Save Task</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="toolbar">
+          <h2>Tasks</h2>
+          <label>
+            Filter by date
+            <input type="date" id="filter-date" />
+          </label>
+        </div>
+        <ul id="todo-list" class="todo-list"></ul>
+      </section>
+    </main>
+
+    <template id="todo-item-template">
+      <li class="todo-item">
+        <div>
+          <h3 class="todo-title"></h3>
+          <p class="todo-date"></p>
+          <p class="todo-details"></p>
+        </div>
+        <div class="actions">
+          <button class="mark-done">Done</button>
+          <button class="delete">Delete</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
